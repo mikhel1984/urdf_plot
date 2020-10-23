@@ -1,4 +1,11 @@
 # Use matplotlib to show URDF robot structure
+#
+# Example:
+# 
+# rbt = Robot("my_robot.urdf")
+# qs = {"joint1":0.7, "joint3":-0.3}
+# rbt.plot(qs)
+#
 # 2020, Stanislav Mikhel
 
 # parse
@@ -229,10 +236,22 @@ class Robot:
         ax.add_line(t)
     plt.show()
 
-# Example:
-# 
-# rbt = Robot("my_robot.urdf")
-# qs = {"joint1":0.7, "joint3":-0.3}
-# rbt.plot(qs)
-
+# call from command line
+if __name__ == "__main__":
+  import sys
+  args = sys.argv
+  if len(args) == 1: 
+    # print help
+    print("Usage:")
+    print("  ./urdfplot fname [jointname1 angle1 jointname2 angle2 etc.]")
+  elif len(args) > 1:
+    # show
+    rbt = Robot(args[1]) 
+    args = args[2:] 
+    # parse angles as key - value
+    jnt, i = {}, 0
+    while i < len(args):
+      jnt[args[i]] = float(args[i+1]) 
+      i += 2
+    rbt.plot(jnt)
 
