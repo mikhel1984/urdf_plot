@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Use matplotlib to show URDF robot structure
 #
 # Example:
