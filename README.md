@@ -8,5 +8,4 @@ rbt.plot(qs)
 ```
 It can be used as a command line tool as well:
 
-    ./urdfplot.py my_robot.urdf joint1 0.7 joint3 -0.3
-    
+    ./urdfplot.py example/my_robot.urdf joint1 0.7 joint3 -0.3
