@@ -9,3 +9,5 @@ rbt.plot(qs)
 It can be used as a command line tool as well:
 
     ./urdfplot.py example/my_robot.urdf joint1 0.7 joint3 -0.3
+ 
+![result](https://github.com/mikhel1984/urdf_plot/blob/main/example/urdf_plot.png)
